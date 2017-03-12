@@ -30,10 +30,16 @@ public class RegisterButtonListener implements Button.ClickListener {
 
 
             // Create a sub-window and set the content
-            final Window subWindow = new Window("Registration:");
+            final Window subWindow = new Window("Registration");
+            subWindow.addStyleName("subWindowsStyle");
+            subWindow.setResizable(false);
+
             VerticalLayout subContent = new VerticalLayout();
-            subContent.setMargin(true);
             subWindow.setContent(subContent);
+            // Configure the windows layout; VerticalLayout by default
+            subContent.setMargin(true);
+            subContent.setSpacing(true);
+            subContent.setSizeUndefined();
 
             final TextField newUserName = new TextField("User name");
             final TextField newUserPassword = new TextField("Password");

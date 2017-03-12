@@ -5,11 +5,9 @@ import com.app.auth.BasicAccessControl;
 import com.app.ui.views.MainScreen;
 import com.app.ui.views.login.LoginForm;
 import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
-import com.vaadin.server.Responsive;
-import com.vaadin.server.VaadinRequest;
-import com.vaadin.server.WrappedHttpSession;
-import com.vaadin.server.WrappedSession;
+import com.vaadin.server.*;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.themes.ValoTheme;
@@ -29,6 +27,9 @@ public class AppUI extends UI {
     private static final long serialVersionUID = 1L;
     private ApplicationContext applicationContext;
     private AccessControl accessControl = new BasicAccessControl();
+
+
+
 
 
     @Override
@@ -67,6 +68,10 @@ public class AppUI extends UI {
 
     public ApplicationContext getApplicationContext() {
         return applicationContext;
+    }
+
+    @VaadinServletConfiguration(productionMode = false, ui = AppUI.class)
+    public static class Servlet extends VaadinServlet {
     }
 
 }

@@ -483,6 +483,14 @@ $v-layout-spacing-horizontal: round($v-unit-size / 1.8) !default;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
   }
 
+  .v-window-subWindowsStyle .v-window-outerheader {
+    background: white;
+  }
+
+  .v-window-subWindowsStyle .v-window-header {
+    color: black;
+  }
+
   /********** RESPONSIVE CreateEventsView ****************/
   .responsiveCssLayout {
     position: relative;
